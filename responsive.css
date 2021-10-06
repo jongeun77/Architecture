@@ -1,0 +1,304 @@
+@media (max-width: 768px){
+  /* Entire layout */
+  .cd-section{
+    height: auto;
+  }
+  .cd-section>div{
+    height: auto;
+  }
+  .content{
+    width: 100%;
+    height: 100%;
+    position: static;
+  }
+  /* ##### Header ##### */
+  header{
+    transition: 0.5s;
+    z-index: 100; /* hiring이 위에가니까 메뉴를 올리기위에서 헤더부모올림*/
+  }
+  header.active{
+    background-color: #fff;
+    border-bottom: 1px solid rgb(0,0,0,0.2);
+  }
+  .slogan{
+    display: none;
+  }
+  
+  .gnb-inner{
+   
+  }
+ .gnb{
+   position: fixed;
+   top: 0;
+   right: -260px; /* 초기상태 위치이동*/
+   width: 250px;
+   height: 100vh;
+   box-shadow: -5px 0 10px rgb(0,0,0,0.4);
+   background-color: #fff; 
+   transition: 0.5s;
+ }
+ .gnb.active{
+  right:0;
+ }
+ .menu{
+   display: block;
+   margin-top: 60px;
+   line-height: 40px;
+ }
+ .menu a{
+   display:block;
+   text-align: right;
+   font-size: 16px;
+   color:#000;
+   padding-right: 20px;
+   line-height: 40px;
+ }
+/* Trigger */
+.trigger{ /* hambur는 앱솔루트다 왜냐면 3개 위치 지정해야하니까*/
+  display: block;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 24px;
+  height: 14px;
+}
+.trigger span{
+  position: absolute;
+  left:0;
+  width:100%; /*absolute되서 인라인블럭이니까 위드다시 넓혀야함*/
+  height: 1px;
+  background-color: #000;
+}
+.trigger span:nth-child(1){
+  top:0;
+}
+.trigger span:nth-child(2){
+  top:50%;
+  width: 80%;
+}
+.trigger span:nth-child(3){
+  top:100%;
+}
+  /* trigger.active (X) */
+
+.trigger.active span:nth-child(1){
+  top:50%;
+  transform: rotate(45deg);
+}
+.trigger.active span:nth-child(2){
+  top:50%;
+  opacity:0;
+}
+.trigger.active span:nth-child(3){
+  top:50%;
+  transform: rotate(-45deg);
+}
+.cd-vertical-nav{
+  display: none;
+}
+/* ##### gototop ##### */
+.gototop{ /*20,20픽스드위치에 opacity:0 translateY(30px)
+  내려가있게 만들어 놓고->active에 opacity:1 translateY(0) 즉
+  제자리인 20,20으로 가게 하는것이므로 트렌슬레이트 시작과 끝만
+  생각하면 헷갈리지 않는다.*/
+position: fixed;
+left: 20px;
+bottom: 20px;
+display:block;
+width: 40px;
+height: 40px;
+border: 1px solid #fff;
+border-radius: 50%;
+text-align: center;
+line-height: 60px;
+opacity:0;
+transition:0.5s;
+transform: translateY(30px);
+}
+.gototop.active{
+  transform: translateY(0);
+  opacity:1;
+}
+/* ##### Hiring ##### */
+.btn-hiring{
+right: 20px;
+bottom: 20px;
+}
+/* ################ Show Hide Section ################ */
+#home,
+#about,
+#project,
+#plan,
+#awards,
+#location,
+#contact { 
+  display:block;
+}
+
+/* ##### Home ##### */
+.home-inner{
+  height: 100vh;
+}
+.welcome-text{
+  transform: translate(-50%, -50%) scale(0.7);
+  width: 100%;
+}
+.home-heading{
+ left: 20px;
+}
+.home-heading span{
+  font-size: 60px;
+}
+  
+/* ##### About ##### */
+.about-inner{
+  height: auto;
+  background:#0dace3;
+}
+.about-items{
+  position: static;
+  width: 100%;
+  margin: 0;
+  transform: none;
+  text-align: center;
+  padding: 20px;
+}
+.item img{
+ float: none;
+}
+/* ##### Project ##### */
+.project-inner{
+  height: auto;
+  border:none;
+}
+.tabs{
+
+}
+.tab{
+
+}
+.tab>div{
+  float:none;
+  width: 100%;
+
+}
+.project-info{
+  padding: 20px;
+}
+.project-info p{
+ position: relative;
+}
+.detail>div {
+  font-size: 13px;
+}
+.view-project{
+ 
+}
+.project-photo{
+
+}
+.btn{
+  width: 100%;
+  bottom: -30px;
+}
+/* ##### Plan & History ##### */
+.plan-inner{
+  height: auto;
+  padding: 20px;
+
+}
+.plan-feature{
+  position: static;
+  width: 100%;
+  transform: none;
+  
+}
+.plan-feature>div{
+  height: auto;
+  margin-top: 20px;
+}
+.plan-info img{
+  width: 100%;
+  height: auto;
+}
+.plan-info>div{
+  float:none;
+}
+.plan-heading{
+  padding-right: 0;
+  width: 100%;
+}
+.plan-photo{
+  width: 100%;
+}
+.plan-info{
+  margin-bottom: 20px;
+}
+.history-slider{
+  /* custom js에서 브레이크포인트 넣으면 2개로 보임*/
+}
+/* ##### Awards ##### */
+.awards-inner{
+  height: auto;
+}
+.awards-inner >div{
+  float:none;
+  width: 100%;
+  border:none;
+}
+.about-heading,
+.victory-jump img{
+ position: static;
+ transform: none;
+}
+.about-heading{
+  width: 100%;
+  padding: 40px 20px;
+}
+.victory-jump{
+text-align: center;
+}
+/* ##### Location ##### */
+.location-inner{
+  height: auto;
+}
+.location-inner:before{
+  /* 오버레이 날라갔으므로 부모자식관계를 pc에 넣어준다*/
+}
+
+.feature{
+  width: 100%;
+  position: static;/* absolute를 해제했으나, 오버레이에 앱솔루트줘서 올라와
+  텍스를 가리니까 할수 없이 포지션 스테틱말고 렐러티브줘서 올라오게 함.
+  그랬더니 pc의 앱솔루트의 50% 중간배열이 살아남. 그래서 굳이 다시 top0 left0준것임*/
+  transform: none;
+  position: relative;/* 비포 오버레이를 밑에 보내려고 줌*/
+  top:0;
+  left:0;
+}
+ 
+.feature >div{
+  float:none;
+  width: 100%;
+  padding: 20px;
+}
+.office{
+  padding-right: 0;
+}
+.service{
+  margin-top: 40px;
+}
+/* ##### Contact ##### */
+.contact-inner{
+  height: auto;
+}
+.contact-feature{
+  position: static;
+  transform: none;
+  width: 100%;
+}
+.contact-feature>div{
+  float:none;
+  width: 100%;
+}
+}/* end */

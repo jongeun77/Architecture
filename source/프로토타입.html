@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>project: 프로토타입</title>
+  <style>
+    body{
+      height: 100vh;
+      margin: 0;
+    }
+    *{box-sizing: border-box;}
+    /* ################## Section: project #############*/
+    .project-inner{
+      height: 100%;
+      /* overflow: hidden; 1개 tab보여야하니까 숨김 */
+    }
+    .tabs{
+      border: 5px solid red;
+      height: 100%;
+      width: 300%; /*탭3개를 가져야하니까 */
+      transition: 0.5s;
+    }
+    .tab{
+      border: 5px solid yellow;
+      float: left;
+      width: 33.3333%;/* 3개로 나눠야하니까 */
+      height: 100%;
+    }
+    .tab>div{
+      border: 5px solid blue;
+      height: 100%;
+      float: left;
+    }
+    .project-info{
+      width: 25%;
+    }
+    .project-photo{
+      width: 75%;
+    }
+    /* 속성선택자 [] */
+    input[name=tabmenu] {
+      display: none;
+    }
+    .btn{
+      position: absolute;
+      border: 1px solid #000;
+      left:30px;
+      bottom: 30px;
+    }
+    .btn label{
+      cursor: pointer;
+    }
+
+    /* 형제 선택자로 라디오체크박스와 라벨 연결해서 기본디자인 */
+    /* 가상선택자 :checked , 형제 선택자 ~ ( 동급형제일때 ~뒤에얘만 선택 */
+
+    input[id="tab1"]:checked ~ .btn label[for="tab1"]{
+      color:red;
+    }
+    input[id="tab2"]:checked ~ .btn label[for="tab2"]{
+      color:red;
+    }
+    input[id="tab3"]:checked ~ .btn label[for="tab3"]{
+      color:red;
+    }
+    /* 라벨 누르면 각각 tab 3개가 왼쪽으로 움직이게 */
+    input[id="tab1"]:checked ~ .tabs {
+      margin-left: 0;
+    }
+    input[id="tab2"]:checked ~ .tabs{
+      margin-left: -100%;
+    }
+    input[id="tab3"]:checked ~ .tabs{
+      margin-left: -200%;
+    }
+  </style>
+</head>
+<body>
+  <div class="project-inner">
+    <!--  input type=radio 버튼은 안보임 -->
+    <input type="radio" name="tabmenu" id="tab1" checked> <!-- checked: 기본을 넣은 레디오만 체크로 보이게함 -->
+    <input type="radio" name="tabmenu" id="tab2">
+    <input type="radio" name="tabmenu" id="tab3">
+    <div class="tabs"><!-- tabs -->
+      <div class="tab">
+        <div class="project-info">
+          project-info1
+        </div>
+        <div class="project-photo">
+          project-photo1
+        </div>
+      </div>
+      <div class="tab">
+        <div class="project-info">
+          project-info2
+        </div>
+        <div class="project-photo">
+          project-photo2
+        </div>
+      </div>
+      <div class="tab">
+        <div class="project-info">
+          project-info3
+        </div>
+        <div class="project-photo">
+          project-photo3
+        </div>
+      </div>
+    </div><!-- tabs end-->
+    <div class="btn">
+      <label for="tab1">tab1</label>
+      <label for="tab2">tab2</label>
+      <label for="tab3">tab3</label>
+    </div>
+  </div>
+</body>
+</html>

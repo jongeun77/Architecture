@@ -1,0 +1,1124 @@
+/* Google font: font-family: 'Montserrat', sans-serif;*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@100;200;300;400&display=swap');
+
+/* fontAwesome CDN 4.7*/
+@import url('http://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+/*재방송*/
+
+/* Reset CSS */
+html{ scroll-behavior: smooth;}
+*{box-sizing: border-box;}
+ul{list-style: none; padding: 0;}
+a{text-decoration: none;}
+
+/* Default CSS */
+body{
+  font-family: 'Montserrat', sans-serif; 
+  color: #222;
+  font-size: 15px;
+  margin: 0;
+  height: 100vh;
+  background-color: #fff;
+}
+/* Entire Layout */
+.cd-section{
+  height: 100vh;
+}
+.cd-section>div{
+  height: 100%;
+  position: relative;
+}
+.content{
+  background-color: #ddd;
+  position: absolute;
+  width: calc(100% - 40px);
+  height: calc(100% - 80px);
+  left: 20px;
+  bottom: 20px;
+  overflow: hidden;
+}
+/* Header */
+header {
+  position: fixed;
+  top:0;
+  left: 0;
+  width: 100%;
+}
+.gnb-inner {
+  height: 60px;
+  width: calc(100% - 40px);
+  margin: 0 auto;
+  text-align: center;
+  line-height: 60px;
+}
+.logo {
+  float: left;
+}
+.logo img {
+  padding-top: 17px;
+}
+.gnb {
+  float: right;
+}
+.menu {
+  display: none;
+}
+.menu a {}
+.slogan {
+  font-size: 16px;
+  font-style: italic;
+}
+.trigger {
+  display: none;
+}
+/* Hiring button*/
+.btn-hiring{
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+  background-color: #000;
+  color:#fff;
+  padding: 10px 20px;
+  border-radius: 30px;
+  box-shadow: 5px 5px 20px rgb(0,0,0,0.4);
+  transition: 0.5s;
+}
+.btn-hiring .fa{
+  transform: rotateY(180deg);
+  margin-right: 5px;
+}
+
+.btn-hiring:active{
+  transform: scale(0);
+}
+/* Hiring Iframe */
+.featherlight .featherlight-content {
+  position: relative;
+  text-align: left;
+  vertical-align: middle;
+  display: inline-block;
+  overflow: auto;
+  padding: 0; /*외곽에패딩삭제*/
+  border-bottom: 25px solid transparent;
+  margin-left: 0;
+  margin-right: 0;
+  max-height: 100%;
+  background: #fff;
+  cursor: auto;
+  white-space: normal;
+  width: 100%; /*외부사이즈확장*/
+  height: 100%;
+}
+.featherlight .featherlight-inner {
+  display: block;
+  width: 100%; /*내부사이즈확장*/
+  height: 100%;
+}
+.featherlight .featherlight-close-icon {
+  position: absolute;
+  z-index: 9999;
+  top: 30px; /*아이콘 좌표이동*/
+  right: 40px;
+  line-height: 25px;
+  width: 25px;
+  cursor: pointer;
+  text-align: center;
+  font-family: Arial,sans-serif;
+  background: #fff;
+  background: rgba(255,255,255,.3);
+  color: #000;
+  border: 0;
+  padding: 0;
+  font-size: 40px;/*이거추가*/
+}
+/* ################### Section: Home ################### */
+
+.home-inner{
+  background-color: #fff;
+  height: 100%;
+}
+.welcome-text{
+  font-family: 'Source Sans Pro', sans-serif;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 50px;
+  font-weight: 300;
+  text-align: center;
+  line-height: 1.2em;
+  /* display: none;  */
+  animation: slideup 2s 0s linear; 
+  /* animation: 이름 시간 시작시간 스타일 반복 */
+  animation-fill-mode: both; /*처음으로 돌아가지 많고 끝내라*/
+}
+.welcome-text span{
+  display: block;
+  font-size: 26px;
+}
+.welcome-text span i{
+  color: crimson;
+  margin-left: 3px;
+}
+.opacity-image{
+  background: url(images/section-bg-01.jpg) no-repeat center center/cover;
+  height: 100%;
+  animation: opacity-image 1s 2.5s ease-in both; 
+  /* display: none; */
+}
+.home-heading{
+  /* display:none; */
+  position: absolute;
+  top: 50%;
+  left: 200px; /*Y만 주고 x축 덜컹거림떄문에 고정함 */
+  transform: translateY(-50%);
+
+}
+.home-heading span{
+  display:block;
+  font-size: 115px;
+  color: #fff;
+  font-weight: 700;
+  /* display: none; */
+  width: 0; /* span안에 글자를 오버플로우히든+위드0으로 넣어놓는다.*/
+  overflow: hidden;
+  animation: reveal 1s 3s ease-in-out both;
+}
+.home-heading span:nth-child(1){
+  animation-delay: 3s;
+}
+.home-heading span:nth-child(2){
+  animation-delay: 3.2s;
+}
+.home-heading span:nth-child(3){
+  animation-delay: 3.4s;
+}
+/*애니메이션 효과 */
+
+/* 2번쨰 검정색 커튼효과: 0->100->0*/
+.home-inner:before{
+  content: "";
+  background-color: #000;
+  position: absolute;
+  width: 10%; /*초기상*/
+  height: 100%;
+  top:0;
+  left: 0;
+  animation: overlay 1s 2s ease-in-out both;
+  /* display:none; */
+}
+/* animation keyframe*/
+/*animation 1 */
+@keyframes slideup{
+  0%{
+    opacity:0;
+    margin-top: 50px;
+  }
+  20%{
+    opacity:1;
+    margin-top: 0;
+  }
+  80%{
+    opacity:1;
+    margin-top: 0;
+  }
+  100%{
+    opacity:0;
+    margin-top: 0;
+  }
+}
+/* animation2 */
+@keyframes overlay {
+  0%{ 
+    width: 0;
+    left: 0; /*꼭 기준점 줘야한다*/
+  }
+  50%{
+    width: 100%;
+    left: 0;
+  }
+  100%{
+    width: 0;
+    left: 100%;
+  }
+}
+/* anmation3 :opacity-image*/
+@keyframes opacity-image{
+  0%{
+    opacity:0;
+  }
+  100%{
+    opacity:1;
+  }
+}
+@keyframes reveal{
+  0%{
+    width: 0;
+  }
+  100%{
+    width: 100%;
+  }
+}
+
+/* ################### Section: About ################### */
+
+.about-inner{ /*background 한줄쓰기: color url no-repeat position/size*/
+  background: #0dace3 url(images/line-drawing.png) no-repeat right bottom;
+  height:100%;
+  position: relative;
+}
+.about-items{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 150px;
+  width: 50%;
+
+}
+  
+.item{
+  color: #fff;
+  overflow: hidden;
+  margin-bottom: 30px;
+  letter-spacing: -1px;
+}
+.item img{
+  width: 120px;
+  filter: invert(1);
+  float: left;
+  margin-right: 50px;
+  transition: 0.5s;
+}
+.item span{
+  
+}
+.item span h3{
+  font-size: 28px;
+  font-weight: 500;
+  margin: 0;
+  transition: 0.5s;
+  
+}
+.item span p{
+  font-size: 18px;
+  overflow: hidden;
+}
+.item:hover h3{ /*item에 호버하면 img, h3변한다(자식만가능)*/
+  color: #000;
+}
+.item:hover img{
+  filter: invert(0);
+}
+/* ################## Section: project #############*/
+.project-inner{
+  height: 100%;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  overflow: hidden; 
+}
+.tabs{
+  height: 100%;
+  width: 300%; /*탭3개를 가져야하니까 */
+  transition: 0.5s;
+}
+.tab{
+  float: left;
+  width: 33.3333%;/* 3개로 나눠야하니까 */
+  height: 100%;
+}
+.tab>div{
+  height: 100%;
+  float: left;
+}
+/* btn 속성선택자 [] */
+input[name=tabmenu] {
+  display: none;
+}
+.btn{
+  position: absolute;
+  left:0;
+  bottom: 30px;
+  width: 25%;
+  text-align: center;
+}
+.btn label{
+  cursor: pointer;
+  display: inline-block;
+  background-color: #000;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  transition: 0.5s;
+  margin: 8px;
+  position: relative; /*위치가 휭 날라가면 포지션 문제...*/
+}
+.btn label:before{
+  content:"";
+  display: block;
+  position: absolute;
+  border: 1px solid transparent;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  top:-6px;
+  left:-6px;
+}
+.btn label:hover:before{
+  border: 1px solid #aaa;
+}
+
+/* 형제 선택자로 라디오체크박스와 라벨 연결해서 기본디자인 */
+/* 가상선택자 :checked , 형제 선택자 ~ ( 동급형제일때 ~뒤에얘만 선택 */
+
+input[id="tab1"]:checked ~ .btn label[for="tab1"]{
+  color:red;
+}
+input[id="tab2"]:checked ~ .btn label[for="tab2"]{
+  color:red;
+}
+input[id="tab3"]:checked ~ .btn label[for="tab3"]{
+  color:red;
+}
+/* 라벨 누르면 각각 tab 3개가 왼쪽으로 움직이게 */
+input[id="tab1"]:checked ~ .tabs {
+  margin-left: 0;
+}
+input[id="tab2"]:checked ~ .tabs{
+  margin-left: -100%;
+}
+input[id="tab3"]:checked ~ .tabs{
+  margin-left: -200%;
+}
+
+/* project-info */
+.project-info{
+  width: 25%;
+  padding: 50px;
+  color: #222;
+  position: relative;
+}
+.project-info h3{
+  font-size: 20px;
+  margin: 20px 0;
+  position: relative; /*01 before를 아래에 놓기위해서 포지션 렐러티브화함 */
+}
+.project-info p{
+  font-size: 16px;
+  line-height: 1.5em;
+}
+.project-info ul{
+  line-height: 2em;
+  margin-top: 50px;
+}
+.project-info ul li:before{
+  content: "\f105";
+  font-family: fontawesome;
+  margin-right: 10px;
+
+}
+.project-info .detail{
+  overflow: hidden;
+  margin: 50px 0;
+}
+.project-info .detail>div {
+  display: inline-block;
+  width: 32.5%;
+  color: #999;
+  text-align: center;
+}
+.project-info .detail span{
+  font-size: 36px;
+  font-weight: 600;
+  color: #222;
+  display: block;
+}
+/* a button */
+.view-project{ /*a 버튼 width를 줘야 안에서 호버되는 화살표따라 늘어나지 않는다. 높이는 패딩으로해도됨 */
+  display: inline-block;
+  text-align: center;
+  background-color: #3f3f3f;
+  color: #fff;
+  /* padding: 10px 50px; */
+  transition: 0.5s;
+  font-size: 13px;
+  width: 200px; /*폭을 고정해야 안에서 화살표따라 달라지지 않는다*/
+  padding: 10px;
+  
+}
+.view-project:hover{
+  background-color: #000;
+}
+.view-project:hover i{
+  margin-left: 20px;
+}
+.view-project .fa{
+  transition: 0.5s;
+}
+.view-project:hover .fa{
+  margin-left: 30px;
+}
+.project-photo{
+  width: 75%;
+}
+/* data-text 사용자 정의 속성 */
+.project-info:before {
+  content: attr(data-text); /* data-text는 클래스자체를 안넣고 before/after 넣는다. content: attr(data-text)*/
+  font-size: 130px;
+  color: rgba(221, 221, 221, 0.795);
+  position: absolute;
+  top: -10px;
+  left: 10px;
+}
+
+/* ################### Section: Plan ################### */
+.plan-inner{
+  height: 100%;
+  background-color: #1d1b24;
+}
+.plan-feature{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+}
+.plan-feature>div{
+
+  height: 300px;
+  color: #bbb;
+}
+.plan-info{
+ 
+}
+.plan-info>div{
+  float: left;
+}
+.plan-heading{
+  width: 70%;
+  padding-right: 50px;
+}
+.plan-photo{
+  width: 30%;
+}
+.plan-info img{
+  height: 280px;
+} 
+.plan-heading h2{
+  color: #fff;
+  text-align: left;
+  margin: 0;
+}
+.plan-heading p{
+ font-size: 16px;
+ line-height: 1.5em;
+}
+.plan-heading hr.bar{
+  background-color: dodgerblue;
+  display: inline-block; /*margin 30 auto해체 */
+}
+
+.history-info{
+  
+}
+.history-info hr.bar{
+  background-color: dodgerblue;
+  display: inline-block;
+} 
+.history-info h2{
+  color: #fff;
+  text-align: left;
+  margin: 0;
+}
+.history-info>div{
+ 
+}
+.history-slider>div{
+margin:0 5px; /**/
+}
+.history-slider h4{
+  font-size: 20px;
+  color: #fff;
+  font-weight: normal;
+  margin: 0;
+}
+.history-slider p{
+  font-size: 16px;
+  line-height: 1.5em;
+}
+.history-slider span{
+  color: dodgerblue;
+}
+/* Slick.js Custom CSS */
+.history-slider .slick-arrow {
+  display: none !important;
+}
+.history-slider .slick-dots li button:before {
+  color: #fff;
+  font-size: 40px;
+}
+.history-slider .slick-dots li {
+  margin: 0;
+}
+/* ################### Section: Awards ################### */
+.awards-inner{
+  height: 100%; /*부모에 100퍼 높이를 줘야 자식이 높이생겨*/
+}
+.awards-inner >div{ /* awards-inner안에 자식div 2개만 해당되므로 >div */
+ float:left;
+ width: 50%;
+ height: 100%;
+ position: relative;
+ border: 1px solid #ddd;
+}
+.about-awards{
+  color: #fff;
+  background-color: #1a1f24;
+}
+.about-heading{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 70%;
+  text-align: center;
+}
+.about-heading h2{
+  margin: 0;
+}
+hr.bar{
+  width: 50px;
+  height: 4px;
+  background-color: red;
+  border:none;
+  margin: 30px auto;
+}
+.about-heading p{
+  font-size: 18px;
+  line-height: 1.5em;/*16* 1.5*/
+  color:#999;
+  margin-bottom: 22px;
+  
+}
+.view-awards{
+  padding: 5px 15px;
+  width: 200px;
+  border: 1px solid #fff;
+  border-radius: 20px;
+  color: #bbb;
+  transform: 0.5s; 
+  text-transform: uppercase;
+  /* display: block; */
+  /* margin: 5px auto;  마진탑 줄려면 a태그인라인이니까, 블럭화해서 마진 오토로 하던지
+  위에서 p태그에서 마진바텀 주던지*/
+}
+.view-awards:hover{
+  border: transparent;
+  background-color: #31c0ce;
+  color: #1a1f24;
+}
+.victory-jump{
+  background-color: #fff;
+}
+.victory-jump img{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 80%;
+}
+/* ################### Section: location ################### */
+.location-inner{
+  background: url(images/background-location.jpg)no-repeat center center/cover;
+  height: 100%;
+  position: relative;/* 모바일서 비포 날라갔길래 부모자식줌*/
+}
+.location-inner:before{
+  content: ""; /* 비포애프터에 제발 content+block absolute넣은 이유는 인라인블락겸사겸사*/
+  display: block;
+  background-color: rgb(0,0,0,0.7);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+.feature{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  color: #ddd;
+  overflow: hidden;
+}
+.feature >div{/* 제발 >좀 써....!*/
+  float: left;
+}
+.office{
+  /* float: left; */
+  width: 60%;
+  padding-right: 100px;
+ 
+}
+.office .headquaters{
+  margin-bottom: 50px;
+}
+.office b{}
+.office h2{
+  text-align: left;
+  color: #1db1f0;
+  margin: 0;
+  margin-top: 5px;
+}
+.office p{
+  font-size: 16px;
+}
+.service{
+  
+  width: 40%;
+}
+.service-item{
+margin-bottom: 20px;
+}
+.service-item i{
+ color: #1db1f0;
+ font-size: 40px;
+}
+.service-item h3{
+  font-size: 26px;
+  margin: 0;
+  font-size: 26px;
+  color:#fff;
+  
+}
+.service-item p{
+  font-size: 15px;
+}
+
+/* ################### Section: Contact ################### */
+.contact-inner{
+  background-color: #fff;
+  position: relative;
+  height: 100%;
+}
+.contact-feature{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  /* overflow: hidden; */
+  color: #222;
+}
+.contact-feature>div{
+  float: left;
+  width: 50%;
+  padding: 20px;
+}
+.contact-form{
+  
+}
+.contact-form h3{
+  font-size: 30px;
+  font-weight: normal;
+  margin: 0;;
+}
+.contact-form b{
+  font-weight: bold;
+}
+.contact-form p{
+  font-size: 15px;
+  margin-bottom: 15px;
+}
+.send-box label{
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 10px;
+
+}
+input[type="email"],
+input[type="text"],
+textarea{
+  outline: none;
+  border: 1px solid #ccc;
+  outline:none;
+  border-radius: 3px;
+  width: 100%;
+  padding: 12px 20px;
+  margin-bottom: 10px;
+  transition: 0.5s;
+}
+input[type=email]:hover,
+input[type=text]:hover,
+textarea:hover {
+  border: 1px solid #0088cc;
+  box-shadow: 0 0 3px #0088cc;
+}
+input:focus,
+textarea:focus {
+  background-color: #ddd;
+}
+
+.contact-form span{
+  color:crimson;
+  font-weight: normal;
+}
+.contact-info{
+  
+}
+.contact-info h4{
+  font-size: 30px;
+  font-weight: normal;
+  margin: 0;
+  margin-bottom: 20px;
+}
+.contact-info b{
+  font-weight: bold;
+}
+.contact-info ul{
+
+}
+.contact-info li{
+  line-height: 2em;
+}
+.contact-info li:last-child{
+  color: #1db1f0;
+}
+.contact-info p{
+  line-height: 1.5em;
+}
+button{
+  background-color: #1db1f0;
+  color: #fff;
+  padding: 11px 20px;
+  border-radius: 3px;
+  border:none;
+  margin-top: 5px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+button:hover{
+  background-color: #000;
+}
+/* ################### Subpage: Hiring ################### */
+
+.modal{
+  font-family: 'Montserrat', sans-serif;
+  color: #222;
+}
+.header{
+  position: fixed;
+  width: 100%;
+  background-color: #fff;
+  z-index: 1;
+}
+.header-inner{
+  height: 90px;
+  width: 95%;
+  margin: auto;
+  border-bottom: 1px solid #ddd;
+}
+.modal-display{
+  line-height: 90px;
+  font-size: 16px;
+
+}
+/* main */
+.hiring-main{
+  height: 600px;
+  position: relative;
+  font-family: 'Montserrat', sans-serif;
+  color: #222;
+}
+.hiring-heading{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+  animation: slidedown 2s linear both;
+}
+.hiring-heading span{
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  position: relative;
+}
+.hiring-heading span:before,
+.hiring-heading span:after {
+  content: '';
+  width: 50px;
+  height: 2px;
+  background-color: #222;
+  position: absolute;
+  top: 50%;
+
+}
+.hiring-heading span:before{
+  right: 100px;
+}
+.hiring-heading span:after{
+  left: 100px;
+}
+.hiring-heading h1{
+  font-size: 100px;
+  font-weight: 200;
+  margin: 0;
+  margin-top: 40px;
+}
+.hiring-info{
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+.hiring-info >div{
+  height: 600px;
+  width: 50%;
+  float: left;
+}
+.hiring-info .center-parent{ 
+  position: relative;
+}
+.hiring-info .center-child{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 78%;
+}
+.center-child h2{
+  font-size: 36px;
+  margin-bottom: 30px;
+  font-weight: normal;
+}
+.center-child p{
+  font-size: 22px;
+  line-height: 1.5em;
+}
+.hiring-info .photo img{
+  width: 100%;
+}
+.hiring-slogan{
+  text-align: center;
+  margin-top: 100px;
+  margin: auto;
+  width: 70%;
+}
+.hiring-slogan p{
+  font-size: 32px;
+  font-weight: 200;
+  padding: 100px 0;
+  position: relative;
+}
+.hiring-slogan p:before{
+  content: ",,";
+  font-family: 'Overpass', sans-serif;
+  font-size: 200px;
+  color: #ddd;
+  transform: rotate(180deg);
+  position: absolute;
+  top:-10px;
+  left: -100px;
+}
+.hiring-slogan p:after{
+  content: ",,";
+  font-family: 'Overpass', sans-serif;
+  font-size: 200px;
+  color: #ddd;
+  position: absolute;
+  top: 20px;
+  right: -50;
+}
+.photo img{
+  width: 100%;
+}
+.hiring-contact{
+}
+.hiring-contact ul{
+  display: inline-block; /* 플롯대신 인라인으로 보냄.50%하면 안된다. 인라인블럭에 마진이 있음*/
+  width: 49%;
+  font-size: 20px;
+  font-weight: 300;
+}
+.hiring-contact li{
+  line-height: 2em;
+}
+.hiring-contact li:first-child{
+  font-weight: 400;
+}
+.hiring-contact li:last-child{
+  color: dodgerblue;
+}
+.center-child .sns{
+ 
+}
+.sns a{
+ display: inline-block;
+ width: 30px; /*a 의크기이고, 아래 폰트는 아이콘사이즈 빈공간이 나중에 호버시보임*/
+ height: 30px;
+ font-size: 15px;
+ color: #000;
+ border-radius: 50%;
+ line-height: 30px;
+ text-align: center;
+ margin: 2px;
+ position: relative;
+ transition: 0.5s;
+}
+.sns a:hover{
+color: #fff;
+}
+.sns a:before{
+  content:"";
+  position: absolute;
+  background-color: red;
+  width: inherit; /*before 위드높이 써줘야*/
+  height: inherit;
+  border-radius: 50%;
+  left: 50%; /* 부모에게 높이는 상속 가로만보냄*/
+  transform: translateX(-50%) scale(0);
+  z-index: -1;  /*뒤로보내야한다*/
+}
+.sns a:hover:before{
+  transform: translateX(-50%) scale(1);
+}
+.sns a:nth-child(1):before{
+  background-color: #3B5999;
+}
+.sns a:nth-child(2):before{
+  background-color: #56ACEE;
+}
+.sns a:nth-child(3):before{
+  background-color: #00C300;
+}
+.sns a:nth-child(4):before{
+  background-color: #E4405F;
+}
+.sns a:nth-child(5):before{
+  background-color: #CD201F;
+}
+.sns a:nth-child(6):before{
+  background-color: #00AFF0;
+}
+/* ################### Subpage: project-01 ################### */
+.modal .project-detail{}
+.hiring-main.project-detail{
+  background: url(images/project-modal-main-01.jpg) no-repeat center center/cover;
+  height: 100vh;
+}
+.project-detail .hiring-heading{
+  color: #fff;
+  animation: slidedown 2.5s linear both;
+  transition: 0.5s;
+}
+.project-detail .hiring-heading span:before{
+  background-color: #fff;
+  left: -80px;
+  height: 2px;
+  border:none;
+}
+.project-detail .hiring-heading span:after{
+  background-color: #fff;
+  left: 160px;
+  height: 2px;
+  border:none;
+}
+.project-detail .hiring-heading h1{
+  font-size: 70px;
+  margin: 0;
+  margin-top: 30px;
+}
+.project-detail .hiring-info{
+  height: 600px;
+  margin-bottom: 0;
+}
+.project-detail .center-parent{}
+.project-detail .center-child{}
+.photo.project-info{
+  padding-top: 150px;
+}
+.photo.project-info ul{
+  font-size: 20px;
+  margin: 30px 0;
+}
+.hiring-slogan.project-slogan{
+  animation: slideup2 2s 3.5s linear both;
+}
+
+.hiring-info.ani1 {
+  animation: slideup2 1.5s 1.5s linear both;
+} 
+.hiring-info.ani2 {
+  animation: slideup2 1.5s 2s linear both;
+}
+.hiring-info.ani3 {
+  animation: slideup2 1.5s 2.5s linear both;
+}
+.hiring-info.ani4 {
+  animation: slideup2 1.5s 3s linear both;
+}
+/* slidedown ani */
+@keyframes slidedown{
+  0%{
+    opacity:0;
+    margin-top: -50px;
+  }
+  100%{
+    opacity:1;
+    margin-top: 0;
+  }
+}
+@keyframes slideup2{
+  0%{
+    opacity: 0;
+    margin-top: 0px;
+  }
+  100%{
+    opacity: 1;
+    margin-top: 0;
+  }
+}
+/* ################### Subpage: project-02 ################### */
+.hiring-main.project-detail2{
+  background: url(images/project-main-03-01.jpg) no-repeat center center/cover;
+  height:100vh;
+}
+.project-detail2 .hiring-heading,
+.project-detail3 .hiring-heading{
+  color: #fff;
+  animation: slidedown 2.5s linear both;
+  transition: 0.5s;
+}
+.hiring-heading span:before{
+  background-color: #000;
+  left: -80px;
+  height: 2px;
+  border:none;
+}
+.hiring-heading span:after{
+  background-color: #000;
+  left: 110px;
+  height: 2px;
+  border:none;
+}
+.project-detail2 .hiring-heading h1,
+.project-detail3 .hiring-heading h1{
+  font-size: 70px;
+  margin: 0;
+  margin-top: 30px;
+}
+.project-detail2 .hiring-info,
+.project-detail3 .hiring-info {
+  height: 600px;
+  margin-bottom: 0;
+}
+.photo.project-info{
+  padding-top: 150px;
+}
+/* ################### Subpage: project-03 ################### */
+.hiring-main.project-detail3{
+  background: url(images/project-modal-main-02.jpg) no-repeat center center/cover;
+  height: 100vh;
+}
