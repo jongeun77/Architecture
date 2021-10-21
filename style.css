@@ -90,7 +90,6 @@ header {
   transform: rotateY(180deg);
   margin-right: 5px;
 }
-
 .btn-hiring:active{
   transform: scale(0);
 }
@@ -340,7 +339,7 @@ input[name=tabmenu] {
 .btn{
   position: absolute;
   left:0;
-  bottom: 0.187em;
+  bottom: -0.65em;
   width: 25%;
   text-align: center;
 }
@@ -486,11 +485,11 @@ input[id="tab3"]:checked ~ .tabs{
   width: 80%;
 }
 .plan-feature>div{
-  height: 300px;
+  height: 285px;
   color: #bbb;
 }
 .plan-info{
- 
+ overflow: hidden;
 }
 .plan-info>div{
   float: left;
@@ -509,6 +508,7 @@ input[id="tab3"]:checked ~ .tabs{
   color: #fff;
   text-align: left;
   margin: 0;
+  font-size: 1.80em;
 }
 .plan-heading p{
  font-size: 1em;
@@ -517,6 +517,7 @@ input[id="tab3"]:checked ~ .tabs{
 .plan-heading hr.bar{
   background-color: dodgerblue;
   display: inline-block; /*margin 30 auto해체 */
+  margin: 0;
 }
 
 .history-info{
@@ -525,17 +526,19 @@ input[id="tab3"]:checked ~ .tabs{
 .history-info hr.bar{
   background-color: dodgerblue;
   display: inline-block;
+  margin:0;
 } 
 .history-info h2{
   color: #fff;
   text-align: left;
   margin: 0;
+  font-size: 1.80em;
 }
 .history-info>div{
  
 }
 .history-slider>div{
-  margin:0 5px;
+  margin:10px 5px;
 }
 .history-slider h4{
   font-size: 1.25em;
@@ -546,7 +549,7 @@ input[id="tab3"]:checked ~ .tabs{
 .history-slider p{
   font-size: 1em;
   line-height: 1em;
-  margin: 5px;
+  margin: 10px 5px;
 }
 .history-slider span{
   color: dodgerblue;
@@ -560,7 +563,7 @@ input[id="tab3"]:checked ~ .tabs{
   font-size: 40px;
 }
 .history-slider .slick-dots li {
-  margin: 0;
+  margin: -1.875em 0;
 }
 /* ################### Section: Awards ################### */
 .awards-inner{
@@ -674,7 +677,6 @@ hr.bar{
   font-size: 16px;
 }
 .service{
-  
   width: 40%;
 }
 .service-item{
@@ -682,17 +684,16 @@ margin-bottom: 20px;
 }
 .service-item i{
  color: #1db1f0;
- font-size: 40px;
+ font-size: 2em;
 }
 .service-item h3{
-  font-size: 26px;
+  font-size: 1.5em;
   margin: 0;
-  font-size: 26px;
   color:#fff;
   
 }
 .service-item p{
-  font-size: 15px;
+  font-size: 0.9em;
 }
 
 /* ################### Section: Contact ################### */
@@ -707,8 +708,9 @@ margin-bottom: 20px;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 70%;
-  /* overflow: hidden; */
   color: #222;
+  overflow: hidden;
+  height: 100%;
 }
 .contact-feature>div{
   float: left;
@@ -731,29 +733,29 @@ margin-bottom: 20px;
   margin-bottom: 15px;
 }
 .send-box label{
-  display: block;
-  font-size: 16px;
-  font-weight: 500;
-  margin-bottom: 10px;
-
+ display: block;
+ font-size: 16px;
+ font-weight: 500;
+ margin-bottom: 10px;
 }
 input[type="email"],
 input[type="text"],
 textarea{
+  display: block;
   outline: none;
   border: 1px solid #ccc;
-  outline:none;
-  border-radius: 3px;
   width: 100%;
   padding: 12px 20px;
+  border-radius: 3px;
   margin-bottom: 10px;
   transition: 0.5s;
 }
-input[type=email]:hover,
-input[type=text]:hover,
+input[type="email"]:hover,
+input[type="text"]:hover,
 textarea:hover {
   border: 1px solid #0088cc;
   box-shadow: 0 0 3px #0088cc;
+  background-color: #ddd;
 }
 input:focus,
 textarea:focus {
